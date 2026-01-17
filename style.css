@@ -326,17 +326,12 @@ header .header1 h4 {
 
 
 .allElems .allFeatures {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: stretch;
 }
+
 @property --rotate {
     syntax: "<angle>";
     initial-value: 0deg;
@@ -1720,3 +1715,4 @@ input:checked + .slider::before {
     }
 
 }
+
