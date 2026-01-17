@@ -126,12 +126,12 @@ section.allElems {
 }
 
 header .header1 h1 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 0px;
     
  
-    padding: 32px 36px;
+    padding: 32px 0px;
     border-radius: 28px;
 
 
@@ -1718,4 +1718,5 @@ input:checked + .slider::before {
         font-size: 18px !important; /* Font size mobile ke hisab se */
         height: 60px;
     }
+
 }
