@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="shortcut icon" href="./fav/android-chrome-512x512.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <nav>
+            <div class="nav-in">
+                <h2>Productivity DashBoard</h2>
+           <div class="theme-toggle">
+    <span>🌙</span>
+    <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+    </label>
+    <span>☀️</span>
+</div>
+
+            </div>
+        </nav>
+        <section class="allElems">
+            <header>
+                <div class="header1">
+                    <h2>20 April 2025</h2>
+                    <h1>Saturday, 1:00 pm</h1>
+                    <h4>Bhopal (MP)</h4>
+                </div>
+
+                <div class="header2">
+                    <h2>20°C</h2>
+                    <h4>Light rain</h4>
+                    <h3 class="precipitation">Precipitation: 35%</h3>
+                    <h3 class="humidity">Humidity: 49%</h3>
+                    <h3 class="wind">Wind: 10 km/h</h3>
+                    
+                </div>
+            </header>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                    <img src="https://i.pinimg.com/736x/3b/a7/cd/3ba7cdfbcb513938ed8d7ce56d57ba88.jpg"
+                     data-light="https://i.pinimg.com/736x/3b/a7/cd/3ba7cdfbcb513938ed8d7ce56d57ba88.jpg"
+                    data-dark="https://img.freepik.com/premium-vector/list-minimal-vector-line-icon-3d-button-isolated-black-background-premium-vectorxa_570929-1564.jpg"
+                    alt="">
+                    <h2>To Do List</h2>
+                </div>
+                <div class="daily elem" id="1">
+                    <img src="https://i.pinimg.com/736x/d6/85/5e/d6855e977b1de1d0f78580e84013879c.jpg"
+                         data-light="https://i.pinimg.com/736x/d6/85/5e/d6855e977b1de1d0f78580e84013879c.jpg"
+                    data-dark="https://i.pinimg.com/1200x/69/3a/c3/693ac394a01dbbf341436b09824c5f9f.jpg"
+                    alt="">
+                    <h2>Daily Planner</h2>
+                </div>
+                <div class="moti elem" id="2">
+                    <img src="https://i.pinimg.com/1200x/fc/a1/33/fca13395306dd7a0af6adf155cf042b5.jpg "
+                         data-light="https://i.pinimg.com/1200x/fc/a1/33/fca13395306dd7a0af6adf155cf042b5.jpg "
+                    data-dark="https://i.pinimg.com/736x/e5/be/10/e5be1008d7f4e561fba829e8cf6bbc21.jpg"
+                    alt="">
+                    <h2>Motivation</h2>
+                </div>
+                <div class="pomo elem" id="3">
+                    <img src="https://i.pinimg.com/736x/bc/4f/d3/bc4fd393a9de38e99c817d281ca4060c.jpg"
+                    data-light="https://i.pinimg.com/736x/bc/4f/d3/bc4fd393a9de38e99c817d281ca4060c.jpg"
+                    data-dark="https://i.pinimg.com/1200x/d0/5f/0a/d05f0a798b2f40766b4b2c66023a2dde.jpg"
+                        alt="">
+                    <h2>Pomodoro Timer</h2>
+                </div>
+                <div class="goals elem" id="4">
+                    <img src="https://i.pinimg.com/736x/cf/8a/88/cf8a88f80c114789acbe26bacc223647.jpg"
+                         data-light="https://i.pinimg.com/736x/cf/8a/88/cf8a88f80c114789acbe26bacc223647.jpg"
+                    data-dark="https://i.pinimg.com/736x/60/9c/f8/609cf8b04263286e7e325c87afbdf1ab.jpg"
+                    alt="">
+                    <h2>Daily Goals</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="fullElem todo-list-fullpage">
+            <button class="back" id="0">Close</button>
+            <h2>Your Personalised Task List</h2>
+            <div class="todo-container">
+                <div class="addTask">
+                    <form>
+                        <input id="task-input" type="text" placeholder="Enter Task">
+                        <textarea placeholder="Enter Details" name="" id="" cols="30" rows="10"></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" name="" id="check">
+                            <label for="check">Mark as Important!</label>
+                        </div>
+                        <button>Add Task</button>
+                    </form>
+                </div>
+                <div class="allTask">
+
+
+
+                </div>
+            </div>
+        </section>
+        <section class="fullElem daily-planner-fullpage">
+            <button class="back" id="1">Close</button>
+            <h2>Plan your Day to be more Productive</h2>
+
+            <div class="day-planner">
+
+
+
+            </div>
+
+        </section>
+        <section class="fullElem motivational-fullpage">
+            <button class="back" id="2">Close</button>
+            <div class="motivation-fullPage-container">
+                <div class="motivation-container">
+                    <div class="motivation-wrapper">
+                        <img src="./icons8-quote-100.png" alt="">
+                        <div class="motivation-1">
+                            <h2>Quote of the Day</h2>
+                        </div>
+                        <div class="motivation-2">
+                            <h1></h1>
+                        </div>
+                        <div class="motivation-3">
+                            <h2></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       <section class="fullElem pomodoro-fullpage" style="display:none;">
+
+
+    <button class="back" id="3">Close</button>
+
+    <div class="pomo-card">
+        <h2>Pomodoro Timer</h2>
+
+        <h4 class="session">Work Session</h4>
+
+        <div class="pomo-timer">
+            <h1>25:00</h1>
+
+            <div class="pomo-actions">
+                <button class="start-timer">Start</button>
+                <button class="pause-timer">Pause</button>
+                <button class="reset-timer">Reset</button>
+            </div>
+            <p class="pomo-stats">Today: <span>0</span> Pomodoros</p>
+
+        </div>
+        <div class="pomo-side">
+    <h3>Focus Tips</h3>
+    <ul>
+        <li>📵 Phone silent rakho</li>
+        <li>🎧 Headphones lagao</li>
+        <li>📝 One task at a time</li>
+        <li>⏳ 25 min full focus</li>
+    </ul>
+</div>
+    </div>
+
+</section>
+
+        <section class="fullElem daily-goals-fullpage">
+    <button class="back" id="4">Close</button>
+
+    <h2 class="goals-title">Daily Goals</h2>
+
+    <div class="goals-container">
+
+        <!-- ADD GOAL -->
+        <div class="add-goal">
+            <input type="text" id="goalInput" placeholder="Enter your goal..." />
+            <button id="addGoalBtn">Add Goal</button>
+        </div>
+
+        <!-- GOALS LIST -->
+        <div class="goals-list" id="goalsList">
+            <!-- goals dynamically yaha aayenge -->
+        </div>
+
+    </div>
+</section>
+
+
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

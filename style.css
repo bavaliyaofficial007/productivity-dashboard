@@ -1,0 +1,1721 @@
+.elem,
+.header2,
+.nav-in,
+.fullElem {
+    transition:
+        background-color 0.9s ease,
+        box-shadow 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+:root {
+     --card-bg-dark-1: linear-gradient(
+        180deg,
+        #3f444b 0%,
+        #2b2f36 100%
+    );
+     --card-bg-dark-2: linear-gradient(
+        180deg,
+        #40454d 0%,
+        #31353c 100%
+    );
+    --page-bg-light: #eef3ff;   /* 🔥 soft blue background */
+    --card-bg-light-1: linear-gradient(180deg, #f0f5ff, #e1ebff); /* left */
+    --card-bg-light-2: linear-gradient(180deg, #f9fbff, #edf2ff); /* right */
+
+    --motivation-bg-light: linear-gradient(180deg, #ffffff, #f1f5ff);
+    --motivation-border-light: #d6e0ff;
+    --motivation-chip-light: #e8efff;
+    --motivation-text-light: #0f172a;
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: aeonik;
+    color: var(--pri);
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* background-color: var(--sec); 🔥 MOST IMPORTANT */
+    background-color: var(--page-bg);
+}
+
+
+
+#main {
+    min-height: 100vh;  /* 🔥 allow scroll area */
+    width: 100%;
+    
+    background-color: var(--sec);
+}
+
+
+
+section.allElems {
+    min-height: calc(100vh - 120px); /* nav space */
+    width: 100%;
+    padding: 40px;
+    padding-top: 120px; /* nav ke niche gap */
+    position: relative;
+    overflow: visible;
+     /* padding-top: 140px; */
+}
+
+
+.allElems header {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: stretch; /* Dono boxes ki height same rahegi */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Mobile par apne aap ek ke niche ek aa jayenge */
+    padding-top: 35px;
+}
+
+.header1 {
+    flex: 2; /* Laptop pe zyada space lega */
+    min-width: 300px; /* Isse chota nahi hoga, mobile pe full width le lega */
+    max-height: 52vh;
+    padding: 30px !important;
+}
+
+.header2 {
+    flex: 1; /* Laptop pe kam space lega */
+    min-width: 280px;
+    height: auto; /* Fixed VH hata diya taaki content overlap na ho */
+    padding: 30px !important;
+}
+.light-theme .allElems header {
+    background: transparent;
+}
+
+
+.header1{
+      width: 100%;
+    max-width: 65vw;
+
+}
+
+header .header1 h1 {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    
+ 
+    padding: 32px 36px;
+    border-radius: 28px;
+
+
+}
+.light-theme .header1 {
+    background: linear-gradient(
+        180deg,
+        #e9efff 20%,
+        #a5a6a9 80%
+    );
+    border-radius: 28px;
+    padding: 45px;
+}
+
+
+.dark-theme .header1 {
+    /* border: 2px solid transparent; */
+
+    background:
+        linear-gradient(
+            180deg,
+            #3f444b 0%,
+            #2b2f36 100%
+        ) padding-box,
+        conic-gradient(
+            from var(--rotate),
+            #ceb1bf,
+            #c5ebf8,
+            #ceb1bf
+        ) border-box;
+
+    border-radius: 28px;
+    padding: 45px;
+}
+
+
+
+
+header .header1 h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+header .header1 h4 {
+ 
+    font-weight: 500;
+    font-size: 40px;
+}
+
+/* Variables & keyframes agar already nahi hai */
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes headerBorderAnimate {
+    from { --rotate: 0deg; }
+    to { --rotate: 360deg; }
+}
+
+/* Normal state */
+.header2 {
+    position: relative;
+    padding: 36px 40px;
+    border-radius: 28px;
+
+    height: 52vh;
+    width: 28vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* 🔥 vertical center */
+    gap: 14px;                 /* 🔥 text spacing */
+
+    transition: all 0.4s ease;
+}
+
+.light-theme .header2 {
+    background: linear-gradient(
+        180deg,
+        #e9efff 20%,
+        #a5a6a9 80%
+    );
+    border: 1px solid #d6e0ff;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
+}
+
+
+.dark-theme .header2 {
+    background:
+        linear-gradient(
+            180deg,
+            #242425 30%,   /* 🔝 top – slightly lighter dark */
+            #696868 70%  /* 🔽 bottom – deeper dark */
+        ) padding-box,
+        conic-gradient(
+            from var(--rotate),
+            #efcadc,
+            #00bfff,
+            #efcadc
+        ) border-box;
+
+   
+}
+
+.dark-theme .header1 {
+    background:
+        linear-gradient(
+            180deg,
+            #242425 30%,   /* 🔝 top – slightly lighter dark */
+            #696868 70%  /* 🔽 bottom – deeper dark */
+        ) padding-box,
+        conic-gradient(
+            from var(--rotate),
+            #efcadc,
+            #00bfff,
+            #efcadc
+        ) border-box;
+
+    
+}
+
+/* 🔥 COMMON hover transition for BOTH cards */
+.header1,
+.header2 {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    will-change: transform, box-shadow;
+}
+
+.header2:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+.header1:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.dark-theme .header2:hover {
+     border: 2px solid transparent;
+    animation: headerBorderAnimate 1s linear infinite;
+    box-shadow:
+        0 0 35px rgba(206, 177, 191, 0.3),
+        0 0 25px rgba(197, 235, 248, 0.3);
+}
+.dark-theme .header1:hover {
+       border: 2px solid transparent;
+    animation: headerBorderAnimate 1s linear infinite;
+
+    box-shadow:
+        0 0 35px rgba(206, 177, 191, 0.3),
+        0 0 25px rgba(197, 235, 248, 0.3);
+    transform: translateY(-4px) scale(1.01);
+}
+
+
+.header2 h2 {
+    font-size: clamp(28px, 4vw, 48px); /* temp */
+    font-weight: 700;
+}
+
+.header2 h4 {
+    font-size: clamp(14px, 1.6vw, 20px); /* condition */
+    opacity: 0.8;
+}
+
+.header2 h3 {
+    font-size: clamp(13px, 1.4vw, 18px); /* details */
+    line-height: 1.4;
+}
+
+.header2 h2,
+.header2 h3,
+.header2 h4 {
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+
+.header2:hover h2,
+.header2:hover h3,
+.header2:hover h4 {
+    transform: translateY(-4px);
+}
+.light-theme .nav-in h2 {
+    background-color: #e3ebff;
+    padding: 18px 42px;
+    border-radius: 20px;
+    color: #0f172a;
+}
+
+
+.allElems .allFeatures {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes borderAnimate {
+    from { --rotate: 0deg; }
+    to { --rotate: 360deg; }
+}
+
+.elem {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    
+    
+
+    background:
+        linear-gradient(var(--pri)) padding-box,
+        conic-gradient(
+            from var(--rotate),
+            transparent,
+            var(--tri1),
+            transparent
+        ) border-box;
+
+    
+}
+
+.elem:hover {
+    border: 3px solid transparent;
+    box-shadow: 5px 5px 20px rgba(245, 240, 240, 0.2);
+    animation: borderAnimate 2s linear infinite;
+}
+.light-theme .elem {
+    background: #ffffff; /* clean card bg */
+    border: 1.5px solid #d0d0d0;
+}
+
+.light-theme .elem:hover {
+    border: 1.5px solid #111111; /* 🔥 black border */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    animation: none; /* 🔥 IMPORTANT */
+}
+
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.elem h2 {
+    position: absolute;
+    bottom: -40px;
+    right: 5%;
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+.elem:hover h2 {
+    bottom: 8%;
+    opacity: 1;
+}
+
+
+.elem:active {
+    scale: 0.97;
+}
+
+.fullElem {
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    padding: 40px;
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+}
+
+.back {
+    position: absolute;
+    right: 5%;
+    background-color: var(--red);
+    border-radius: 10px;
+    padding: 15px 22px;
+    border: none;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.motivational-fullpage .back {
+    z-index: 9999;
+    position: fixed;   /* 🔥 absolute nahi */
+    top: 30px;
+    right: 40px;
+}
+
+.back:active {
+    scale: 0.97;
+}
+
+
+
+.todo-list-fullpage h2 {
+    font-size: 65px;
+}
+
+.todo-list-fullpage .todo-container {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    margin-top: 40px;
+
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+.todo-list-fullpage .todo-container {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    margin-top: 40px;
+
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+
+.todo-list-fullpage .todo-container .addTask form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.todo-container .addTask form #task-input {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 29px;
+    border-radius: 5px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.todo-container .addTask form textarea {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 29px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.todo-container .addTask form button {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 26px;
+    background-color: var(--tri1);
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    margin-bottom: 20px;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.todo-container .addTask form button:active {
+    scale: 0.96;
+}
+
+.todo-list-fullpage .todo-container .allTask {
+    width: 65%;
+    min-height: 100%;
+    border-radius: 22px;
+    padding: 25px;
+
+    background: linear-gradient(180deg, #3b3c3f, #969cae);
+    box-shadow: inset 0 0 0 1px #e5e7eb;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+}
+
+
+.task {
+    width: 100%;
+    padding: 18px 22px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease;
+}
+
+.task:hover {
+    transform: translateY(-3px);
+}
+.todo-container input,
+.todo-container textarea {
+    background: #0b0b0b;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+}
+
+.todo-container input:focus,
+.todo-container textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
+    transform: scale(1.01);
+}
+
+
+.task h5 {
+    color: var(--sec);
+    font-size: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.task h5 span {
+    background-color: var(--red);
+    color: var(--pri);
+    padding: 4px 8px;
+    border-radius: 50px;
+    font-size: 11px;
+}
+
+.task h5 span.true {
+    opacity: 1;
+}
+
+.task h5 span.false {
+    opacity: 0;
+}
+.light-theme .task h5 {
+    color: #000;
+}
+
+.dark-theme .task h5 {
+    color: #000;   /* dark me light text */
+}
+
+
+.task button {
+    padding: 15px 30px;
+    color: #000;                 /* 🔥 FIXED */
+    background-color: var(--green);
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+
+
+.task button:active {
+    scale: 0.96;
+}
+.task-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.task-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.mark-imp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 30px;
+}
+
+.mark-imp input {
+    scale: 1.7;
+}
+
+.mark-imp label {
+    font-size: 21px;
+
+}
+
+
+
+.daily-planner-fullpage h2 {
+    font-size: 70px;
+}
+
+.daily-planner-fullpage .day-planner {
+    background-color: var(--tri2);
+    height: 85%;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    overflow: auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    webkitscrollbar-width: none; /* Firefox */
+    scrollbar-width: none; /* Firefox */
+}
+
+.daily-planner-fullpage .day-planner .day-planner-time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.day-planner .day-planner-time p {
+    position: absolute;
+    top: 12%;
+    left: 2%;
+    color: var(--tri1);
+    font-size: 16px;
+}
+
+.day-planner .day-planner-time input {
+    padding: 20px 45px;
+    width: 100%;
+    background-color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    font-size: 35px;
+    padding-top: 34px;
+    outline: none;
+}
+
+
+
+
+.motivation-fullPage-container {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.motivational-fullpage .motivation-container {
+    height: 600px;
+    width: 80%;
+    border-radius: 50px;
+    position: relative;
+}
+
+.motivational-fullpage .motivation-container::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--tri1);
+    border-radius: 50px;
+    scale: 1.15;
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+    z-index: 8;
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper {
+    z-index: 10;
+    position: absolute;
+
+    width: 100%;
+    background-color: var(--tri1);
+    padding: 20px;
+    border-radius: 30px;
+    border: 6px solid var(--tri2);
+
+}
+
+.motivation-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.motivation-1 h2 {
+
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 40px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-weight: 500;
+    text-align: right;
+}
+
+.motivation-2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 30px;
+
+}
+
+.motivation-2 h1 {
+    font-size: 65px;
+    font-weight: 700;
+    color: var(--sec);
+
+}
+
+.motivation-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.motivation-3 h2 {
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 40px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-weight: 500;
+    text-align: right;
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper img {
+    position: absolute;
+    right: 5%;
+    opacity: 0.2;
+    top: 5%;
+    height: 120px;
+}
+.light-theme .motivational-fullpage .motivation-container::after {
+    background: radial-gradient(circle at top,
+        rgba(99, 102, 241, 0.25),
+        transparent 70%);
+    filter: blur(80px);
+}
+.light-theme .motivation-1 h2 {
+    background-color: var(--motivation-chip-light);
+    color: var(--motivation-text-light);
+}
+.light-theme .motivation-2 h1 {
+    color: var(--motivation-text-light);
+    font-weight: 700;
+    line-height: 1.3;
+}
+.light-theme .motivation-3 h2 {
+    background-color: var(--motivation-chip-light);
+    color: var(--motivation-text-light);
+}
+.light-theme .motivational-fullpage 
+.motivation-container 
+.motivation-wrapper img {
+    opacity: 0.08;
+}
+
+
+
+/* ===== POMODORO PAGE ===== */
+
+.pomodoro-fullpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* card */
+.pomo-card {
+    width: min(90%, 420px);
+    padding: 40px 32px;
+    border-radius: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+   
+    background: var(--card-bg-light-1);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* themes */
+.light-theme .pomo-card {
+    background: linear-gradient(180deg, #f8fbff, #e8efff);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.dark-theme .pomo-card {
+    background: #161616;
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+
+/* title */
+.pomo-card h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+/* session badge */
+.session {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* timer */
+.pomo-timer h1 {
+    font-size: clamp(64px, 12vw, 110px);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* buttons */
+.pomo-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+/* common button */
+.pomo-actions button {
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 600;
+}
+
+/* primary */
+.start-timer {
+    background: var(--tri1);
+    color: #000;
+}
+
+/* secondary */
+.pause-timer,
+.reset-timer {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* dark theme buttons */
+.dark-theme .pause-timer,
+.dark-theme .reset-timer {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--pri);
+}
+
+/* hover */
+.pomo-actions button:hover {
+    transform: translateY(-2px);
+}
+
+/* active */
+.pomo-actions button:active {
+    transform: scale(0.96);
+}
+.dark-theme .pomodoro-fullpage {
+    background-color: #0b0b0b;
+}
+.light-theme .pomodoro-fullpage {
+    background-color: #f5f7fb;
+}
+
+
+
+.pomo-side {
+    max-width: 380px;
+    opacity: 0.9;
+}
+
+.pomo-side h3 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.pomo-side ul {
+    list-style: none;
+}
+
+.pomo-side li {
+    font-size: 18px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+.pomo-stats {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+.pomo-timer h1 {
+    position: relative;
+}
+
+.pomo-timer h1::after {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.08);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    padding: 18px 40px;
+
+    /* glass effect */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* LIGHT THEME NAV */
+.light-theme nav {
+    background: rgba(238, 243, 255, 0.75); /* soft blue glass */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* DARK THEME NAV */
+.dark-theme nav {
+    background: rgba(15, 18, 25, 0.65);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* INNER NAV */
+.nav-in {
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0px 32px;
+    border-radius: 18px;
+
+    background: transparent;
+}
+
+
+/* .nav-in {
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    background-color: var(--tri2);
+    -webkit-box-align: center;
+    
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-radius: 10px;
+    
+
+} */
+.light-theme .nav-in h2 {
+    color: #0f172a;
+    background: linear-gradient(180deg, #e8efff, #f4f7ff);
+    padding: 14px 32px;
+    border-radius: 18px;
+}
+
+.dark-theme .nav-in h2 {
+    color: #f8f4e1;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 14px 32px;
+    border-radius: 18px;
+}
+
+.nav-in h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.theme {
+
+    background-color: var(--pri);
+    padding: 12px 20px;
+    border-radius: 10px;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+    cursor: pointer;
+
+}
+
+.theme h4 {
+    color: var(--sec);
+    font-weight: 700;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.theme:active {
+    scale: 0.96;
+}
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--pri);
+    padding: 10px 16px;
+    border-radius: 12px;
+}
+
+.theme-toggle span {
+    font-size: 18px;
+}
+
+.switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background-color: #2563eb;
+}
+
+input:checked + .slider::before {
+    transform: translateX(24px);
+}
+/* ===== DAILY GOALS ===== */
+
+.daily-goals-fullpage {
+    padding: 50px;
+}
+
+.goals-title {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+/* container */
+.goals-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* add goal box */
+.add-goal {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.add-goal input {
+    flex: 1;
+    padding: 14px 18px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* add button */
+.add-goal button {
+    padding: 14px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* goal list */
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* single goal */
+.goal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+/* remove button */
+.goal-item button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ===== LIGHT THEME ===== */
+.light-theme .add-goal input {
+    background: #f1f5ff;
+    color: #111;
+}
+
+.light-theme .add-goal button {
+    background: #2563eb;
+    color: #fff;
+}
+
+.light-theme .goal-item {
+    background: linear-gradient(180deg, #f8fbff, #e8efff);
+    color: #111;
+}
+
+/* ===== DARK THEME ===== */
+.dark-theme .add-goal input {
+    background: #111;
+    color: #f8f4e1;
+}
+
+.dark-theme .add-goal button {
+    background: #22c55e;
+    color: #000;
+}
+
+.dark-theme .goal-item {
+    background: linear-gradient(180deg, #1e1e1e, #2a2a2a);
+    color: #f8f4e1;
+}
+/* ===== GOAL ITEM UPDATED ===== */
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+/* left part */
+.goal-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* checkbox */
+.goal-left input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* completed goal */
+.goal-item.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* done text */
+.goal-status {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* light theme */
+.light-theme .goal-item {
+    background: linear-gradient(180deg, #f8fbff, #e8efff);
+    color: #111;
+}
+
+.light-theme .goal-status {
+    color: #16a34a;
+}
+
+/* dark theme */
+.dark-theme .goal-item {
+    background: linear-gradient(180deg, #1e1e1e, #2a2a2a);
+    color: #f8f4e1;
+}
+
+.dark-theme .goal-status {
+    color: #22c55e;
+}
+/* ===== DAILY GOALS ===== */
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* left side */
+.goal-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.goal-left input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* completed */
+.goal-item.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* right side */
+.goal-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.goal-status {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* remove button */
+.goal-remove {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.goal-remove:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* light theme */
+.light-theme .goal-item {
+    background: linear-gradient(180deg, #f8fbff, #e8efff);
+    color: #111;
+}
+
+.light-theme .goal-status {
+    color: #16a34a;
+}
+
+/* dark theme */
+.dark-theme .goal-item {
+    background: linear-gradient(180deg, #1e1e1e, #2a2a2a);
+    color: #f8f4e1;
+}
+
+.dark-theme .goal-status {
+    color: #22c55e;
+}
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES (PASTE THIS AT THE END OF style.css)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. Global & Main Layout */
+    section.allElems {
+        padding: 20px;
+        padding-top: 100px; /* Nav space for mobile */
+    }
+
+    /* 2. Navigation */
+    nav {
+        padding: 10px 15px;
+    }
+    .nav-in {
+        padding: 0 10px;
+    }
+    .nav-in h2 {
+        font-size: 20px;
+        padding: 8px 15px !important;
+    }
+    .theme-toggle span {
+        display: none; /* Mobile pe icon/text chupa sakte ho space ke liye */
+    }
+
+    /* 3. Header Section (Dashboard Title Cards) */
+    .allElems header {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px;
+        padding-top: 10px;
+    }
+
+    .header1, .header2 {
+        width: 100% !important; /* Full width on mobile */
+        max-width: 100% !important;
+        height: auto !important; /* Content ke hisab se height */
+        padding: 25px !important;
+    }
+
+    header .header1 h1 {
+        font-size: 40px; /* Font size chota kiya */
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    header .header1 h2, 
+    header .header1 h4 {
+        font-size: 24px;
+    }
+
+    /* 4. Feature Cards Grid (The 'elem' class) */
+    .allElems .allFeatures {
+        justify-content: center; /* Center align cards */
+        gap: 15px;
+    }
+
+    .elem {
+        width: 100%; /* Mobile pe ek card poori screen lele */
+        max-width: 400px;
+        height: 250px;
+    }
+
+    /* 5. To-Do List Fullpage */
+    .todo-list-fullpage h2 {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .todo-list-fullpage .todo-container {
+        flex-direction: column; /* Input aur List ek ke niche ek */
+        align-items: center;
+    }
+
+    .todo-list-fullpage .todo-container .addTask,
+    .todo-list-fullpage .todo-container .allTask {
+        width: 100% !important;
+    }
+
+    .task {
+        flex-direction: column; /* Task ke andar ke buttons stack ho jaye */
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 6. Daily Planner Grid */
+    .daily-planner-fullpage .day-planner .day-planner-time {
+        width: 100%; /* Single column */
+    }
+
+    .day-planner .day-planner-time input {
+        font-size: 20px;
+        padding: 15px 10px;
+    }
+
+    /* 7. Motivation Section */
+    .motivational-fullpage .motivation-container {
+        width: 95%;
+        height: auto;
+    }
+
+    .motivation-2 h1 {
+        font-size: 30px; /* Chota font mobile ke liye */
+    }
+
+    .motivation-1 h2, .motivation-3 h2 {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    /* 8. Pomodoro Timer */
+    .pomo-card {
+        padding: 25px 15px;
+    }
+
+    .pomo-timer h1 {
+        font-size: 60px;
+    }
+
+    /* 9. Daily Goals */
+    .add-goal {
+        flex-direction: column;
+    }
+    
+    .goals-title {
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+/* Extra Chota Screens (e.g. iPhone SE) */
+@media (max-width: 480px) {
+    header .header1 h1 {
+        font-size: 30px;
+    }
+    .back {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    .motivational-fullpage .motivation-container {
+        width: 95%; /* Poori screen cover karega */
+        height: auto;
+        min-height: 400px;
+    }
+    .motivation-2 h1 {
+        font-size: 32px !important; /* Text chota kiya */
+        line-height: 1.2;
+    }
+    .motivation-1 h2, .motivation-3 h2 {
+        font-size: 18px !important;
+        padding: 15px !important;
+    }
+    .motivational-fullpage .back {
+        top: 15px;
+        right: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .todo-list-fullpage .todo-container {
+        flex-direction: column; /* Vertical layout */
+        gap: 20px;
+    }
+    .todo-list-fullpage .todo-container .allTask {
+        width: 100% !important; /* List full width ho jayegi */
+    }
+    .task {
+        flex-direction: column; /* Task title aur button stack ho jayenge */
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .task h5 {
+        font-size: 20px;
+    }
+    .todo-container .addTask form #task-input, 
+    .todo-container .addTask form textarea {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .pomo-card {
+        width: 95%;
+        padding: 20px;
+    }
+    .pomo-timer h1 {
+        font-size: 60px !important; /* Mobile friendly timer size */
+    }
+    .pomo-actions {
+        flex-wrap: wrap; /* Buttons stack ho sakein */
+    }
+    .pomo-actions button {
+        width: 100%; /* Bade touch targets */
+    }
+}
+/* ============================================================
+   FINAL RESPONSIVE FIX (ALL PAGES) 
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. Global Spacing */
+    section.allElems {
+        padding: 15px;
+        padding-top: 100px;
+    }
+
+    /* 2. Dashboard Header Fix (Bhopal/Date wala section) */
+    .allElems header {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .header1, .header2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding: 20px !important;
+    }
+    header .header1 h1 { font-size: 35px !important; }
+    header .header2 h2 { font-size: 28px !important; }
+
+    /* 3. Feature Cards (To-Do, Diary, etc.) */
+    .allElems .allFeatures {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Mobile pe 1 column */
+        gap: 15px;
+    }
+    .elem {
+        width: 100% !important;
+        height: 250px !important;
+    }
+
+    /* 4. To-Do List Page */
+    .todo-list-fullpage .todo-container {
+        flex-direction: column !important;
+    }
+    .todo-list-fullpage .todo-container .allTask {
+        width: 100% !important;
+    }
+    .task {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .task h5 { font-size: 22px; }
+
+    /* 5. Motivation Page */
+    .motivational-fullpage .motivation-container {
+        width: 95% !important;
+        height: auto !important;
+        padding: 10px;
+    }
+    .motivation-2 h1 { font-size: 28px !important; }
+    .motivation-1 h2, .motivation-3 h2 { font-size: 18px !important; }
+
+    /* 6. Pomodoro Timer */
+    .pomo-timer h1 { font-size: 55px !important; }
+    .pomo-actions { flex-direction: column; gap: 10px; }
+    .pomo-actions button { width: 100%; }
+
+    /* 7. Daily Goals & Planner */
+    .day-planner .day-planner-time { width: 100% !important; }
+    .add-goal { flex-direction: column; }
+    .back { 
+        padding: 10px 15px; 
+        font-size: 18px; 
+        top: 20px; 
+        right: 20px; 
+    }
+}
+/* Media Query ke andar ye dalo */
+@media (max-width: 768px) {
+    
+    .daily-planner-fullpage h2 {
+        font-size: 35px !important; /* Title chota kiya */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .daily-planner-fullpage .day-planner {
+        height: auto; /* Fixed height hata di taaki scroll na fase */
+        padding: 15px;
+        flex-direction: column; /* Sab kuch ek ke niche ek */
+        display: block; /* Flex wrap se better block rahega mobile pe */
+    }
+
+    .daily-planner-fullpage .day-planner .day-planner-time {
+        width: 100% !important; /* Laptop pe 49% tha, ab full width */
+        margin-bottom: 20px;
+    }
+
+    .day-planner .day-planner-time p {
+        font-size: 12px; /* Time label chota kiya */
+        top: 5px;
+        left: 10px;
+    }
+
+    .day-planner .day-planner-time input {
+        padding: 25px 15px 10px 15px !important; /* Space adjust ki taaki text label ke niche dikhe */
+        font-size: 18px !important; /* Font size mobile ke hisab se */
+        height: 60px;
+    }
+}
